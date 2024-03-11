@@ -128,6 +128,7 @@ function Dashboard() {
                 This browser does not support HTML5 Canvas.
               </canvas>
               <ol class="legend">
+              
                 {categoryData.map((c,i)=><li key={i} className={` text-left key ${numberWords[i+1]}`}>{c.category} : {c.count}</li>)}
               </ol>
             </aside>
