@@ -9,20 +9,26 @@ import Orders from './Pages/Orders'
 import Products from './Pages/Products'
 import Navbar from './Components/Navbar';
 import ErrorPage from './Pages/ErrorPage';
+import EditOrder from './Pages/EditOrder';
+import EditProduct from './Pages/EditProduct';
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-       <Navbar></Navbar>
-       <Routes>
-       <Route path='dashboard' element={<Dashboard/>}/>
-       <Route path='orders' element={<Orders/>}/>
-       <Route path='products' element={<Products/>}/>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path='dashboard' element={<Dashboard />} />
+        <Route path='orders' element={<Orders />} />
+        <Route path='products' element={<Products />} />
+        <Route path='/edit/orders/:orderId' element={<EditOrder />} />
+        <Route path='/edit/orders' element={<EditOrder />} />
+        <Route path='/edit/products/:productId' element={<EditProduct />} />
+        <Route path='/edit/products' element={<EditProduct />} />
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>
     </>
-   
+
   )
 }
 
