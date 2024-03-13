@@ -62,7 +62,7 @@ function Dashboard() {
       ctx.clearRect( 0, 0, canvas.width, canvas.height );
   
       for( i = 0; i < pieData.length; i++) {
-          ctx.fillStyle = pieColors[i];
+          ctx.fillStyle = getRandomColor();
           ctx.beginPath();
           ctx.moveTo( halfWidth, halfHeight );
           ctx.arc( halfWidth, halfHeight, halfHeight, lastend, lastend + ( Math.PI * 2 * ( pieData[i] / myTotal )), false );
@@ -96,6 +96,17 @@ function Dashboard() {
     9: "nine",
     10: "ten",
   };
+  function getRandomColor() {
+    // Generate random values for red, green, and blue components
+    var red = Math.floor(Math.random() * 256);
+    var green = Math.floor(Math.random() * 256);
+    var blue = Math.floor(Math.random() * 256);
+  
+    // Construct the RGB color string
+    var color = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+  
+    return color;
+  }
   return (
     <>
       <div className="w-full flex flex-col justify-start items-center p-4  border-4 border-black-800">

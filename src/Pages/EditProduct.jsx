@@ -26,7 +26,7 @@ const EditProduct = () => {
             }))
             console.log("present");
         }
-        else setOrderInfo([...orders, data]);
+        else setProductInfo([...product, data]);
         navigate("/products", { replace: true });
     }
     return (
