@@ -15,8 +15,8 @@ const EditProduct = () => {
         const data = {
             "name": productName,
             "category": category,
-            "price": price,
-            "stock": stock
+            "price": price - 0,
+            "stock": stock - 0,
         }
         if (product.find((e) => e.name == productName)) {
             setOrderInfo(product.map((o) => {
@@ -52,7 +52,7 @@ const EditProduct = () => {
                             onChange={(e) => setPrice(e.target.value)}
                             value={price}
                         />
-                        <input type="test"
+                        <input type="number"
                             className='p-2'
                             placeholder="stock"
                             onChange={(e) => setStock(e.target.value)}
