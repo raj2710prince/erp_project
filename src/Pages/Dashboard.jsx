@@ -21,7 +21,7 @@ function Dashboard() {
       for (const c of category) {
         if (p.category == c.category) { c.count += p.stock; flag = false; }
       }
-      if (flag) category.push({ category: p.category, count: 1 });
+      if (flag) category.push({ category: p.category, count: p.stock });
       color.push(getRandomColor());
     }
     setCategoryData(category)
